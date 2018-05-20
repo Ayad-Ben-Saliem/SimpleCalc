@@ -138,7 +138,7 @@
                 android:layout_weight="1"
                 android:onClick="onACBtnClicked"
                 android:text="Answer"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/perBtn"
