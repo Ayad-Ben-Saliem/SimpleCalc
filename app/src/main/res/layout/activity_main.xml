@@ -8,40 +8,36 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/text_view_background"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="0" />
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@color/text_view_backgrond"
-            android:padding="16dp"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintHorizontal_bias="0.464"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:background="@color/text_view_backgrond"
-            android:padding="16dp"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="0" />
     </LinearLayout>
 
     <TableLayout
@@ -68,6 +64,83 @@
                 android:text="AC" />
 
             <Button
+                android:id="@+id/openBracket"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onPerBtnClicked"
+                android:text="(" />
+
+            <Button
+                android:id="@+id/closeBracket"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onPlusMinusBtnClicked"
+                android:text=")" />
+
+            <Button
+                android:id="@+id/deleteBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onDivBtnClicked"
+                android:text="<<" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/pow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onACBtnClicked"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/EBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onPerBtnClicked"
+                android:text="E" />
+
+            <Button
+                android:id="@+id/logBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onPlusMinusBtnClicked"
+                android:textAllCaps="false"
+                android:text="log" />
+
+            <Button
+                android:id="@+id/lnBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onDivBtnClicked"
+                android:textAllCaps="false"
+                android:text="ln" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/ansBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onACBtnClicked"
+                android:text="Answer"
+                android:textAllCaps="false"/>
+
+            <Button
                 android:id="@+id/perBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -89,7 +162,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onDivBtnClicked"
-                android:text="/" />
+                android:text="@string/divSymbol" />
         </TableRow>
 
         <TableRow
@@ -127,7 +200,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onMulBtnClicked"
-                android:text="x" />
+                android:text="x"
+                android:textAllCaps="false"/>
         </TableRow>
 
         <TableRow
